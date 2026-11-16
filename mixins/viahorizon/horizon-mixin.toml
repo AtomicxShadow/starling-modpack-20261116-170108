@@ -4,6 +4,12 @@ version = "0.8.8-dev"
 priority = 100
 
 [[module]]
+id = "starling_block_predictions"
+file = "crates/horizon-client/src/block_predictions.rs"
+name = "vfp_predictions"
+source = "block_predictions.rs"
+
+[[module]]
 id = "release_chain"
 file = "crates/horizon-protocol/src/lib.rs"
 name = "vfp_release_chain"

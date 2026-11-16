@@ -1,7 +1,8 @@
 # Starling 0.8.0: beş mod için Android derleme kiti
 
-**Durum: kaynak paketi hazırlandı ve statik kontroller yapıldı. Android/Rust
-derlemesi ve telefonda çalışma testi yapılmadı. Bu ZIP hazır APK değildir.**
+**Durum: statik kontroller, beş modun AST uygulaması, Linux'ta ortak Rust
+tür kontrolü ve 7 blok tahmini testi geçti. Tam Android APK derlemesi ve
+telefonda çalışma testi yapılmadı. Bu ZIP hazır APK değildir.**
 
 Kullanıcının Horizonmatica telefon derleme kitinin çok modlu sürümü. Aynı
 Starling Dev APK'sına şunları eklemeyi dener:
@@ -19,8 +20,12 @@ Starling kaynağı 0.8.0 etiketinin tam commit'ine sabittir:
 Horizonmatica, kullanıcının `horizonmatica-phone-build.zip` paketinden alındı;
 `play_mouse` ve `pauses_game` hedefleri için önceki değişiklikler korundu.
 ViaHorizon'un `legacy_boat_ride` yardımcısı Starling 0.8.0'daki `bool` dönüş
-türüne uyarlandı (`Result<bool>` kaldırıldı). Diğer modların Rust kodu
-değiştirilmedi. Starling'in kendi adaptörü ve
+türüne uyarlandı (`Result<bool>` kaldırıldı). Mod Menu'nin düğme oluşturma
+kodundan Starling 0.8.0'da bulunmayan `action` alanı çıkarıldı.
+ViaHorizon'un blok tahmini işlemleri de Starling'in `BlockPredictions`
+yapısına uyarlandı: tek bloğu veya onaylanmış eski işlemleri, diğer tahminleri
+ve işlem sayacını koruyarak unutan iki yöntem AST ile eklenir. Diğer kaynaklar
+korundu. Starling'in kendi adaptörü ve
 horizon-mixins aracı derleme sırasında çalışır. Bunlar tüm API farklarını
 çözme garantisi vermez; ilk gerçek derlemede ek uyarlama gerekebilir.
 

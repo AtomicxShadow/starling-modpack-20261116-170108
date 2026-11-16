@@ -6,7 +6,7 @@ fn inject(game: &mut crate::game::Game<'_>, sequence: i32) -> ::core::ops::Contr
         // Before 1.19 the local change stays until an authoritative block
         // update replaces it. A synthetic sequence ack settles bookkeeping,
         // but must not restore the pre-click state before the server replies.
-        remote.predictions.retain(|_, prediction| prediction.sequence > sequence);
+        remote.predictions.viahorizon_forget_up_to(sequence);
         return ::core::ops::ControlFlow::Break(());
     }
     ::core::ops::ControlFlow::Continue(())

@@ -5,6 +5,6 @@ fn inject(game: &mut crate::game::Game<'_>, pos: [i32; 3]) {
     {
         // Old servers have no sequence ack to release a retained server state.
         // Apply their correction immediately, including refused placements.
-        remote.predictions.remove(&pos);
+        remote.predictions.viahorizon_forget_block(pos);
     }
 }

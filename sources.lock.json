@@ -72,12 +72,15 @@
         "options_scroll.rs": "9ded2d018f4a782e18f8ec91c1ed46b1ea8bc85125f685aedfb2839eabec66e3",
         "options_shortcut.rs": "a2e7cef3bbbcc7e851646a2e8449aac4b10af2bb66662f523e741b6e5e74ed36",
         "runtime.rs": "e8460de1812534966cbe48a9d2667ad3533e3593030a1c10265f15a7468cbc5e",
-        "title_buttons.rs": "19959869d7bf8f5b499ae923679e726679854ab5e15b2cfbd05b5e14a0006195",
+        "title_buttons.rs": "431124fe3edeb888692ee94961d137a78712f1ca766bb36f5231cdf1092938f4",
         "title_click.rs": "69177034b1a4e4f8b8f423fd4dbbd42e7cbcaf13138c06e95287e64b2f23917a",
         "title_draw.rs": "46e8a7c4c06f7802d0d8341890cae4d2b0ca0270c519a6b4ed4f554a9281e3a7",
         "title_runtime.rs": "92432132e7d58aea6dc8df5ce9d42b96728413355e8d4eb6957d111001d4e2e9",
         "ui.rs": "e015f6189c923d43c4b52f168b9b6d46e7de9cb68a6b75672ea1bd7701f3024d"
-      }
+      },
+      "starling_changes": [
+        "title_buttons.rs: omit action field absent from Starling 0.8.0 title::Button"
+      ]
     },
     "viahorizon": {
       "source": "user: viahorizon-main.zip",
@@ -114,20 +117,20 @@
         "frame.rs": "a13c9322f450f919265acb7405d36805e54d814289a0e475dc095d8a31188f5f",
         "full_click.rs": "c1a7d756bcf08eaf31244612593e66965608b29a59ed0bb9775a645aa44e6f0c",
         "hash.rs": "80c69e742fbef7c1a1b9839a4e39737b113d2a53b88c65ea4ac9a860a01c9291",
-        "horizon-mixin.toml": "8b0cd2cd37b24ab66b15f6cdab97efec506a03a5b22484695d16a59ad9c6c4ee",
+        "horizon-mixin.toml": "d54fd948d83d62124f26ce966d81e9e579ad3b37577fca4740b29d7b14d39558",
         "item_support.rs": "44357b3aab983e606e48ed4998cb45c03010086aa12e092def51d8a5498a3bb4",
         "items.rs": "58d25cee9092db0ffd589d21b55c2282b633c537d2a47702cda0a5f63309fe7f",
         "items_1203.rs": "d1115f6e270efb626515906f6566469dc2f6d4e994c4eadbb9a16e3770b7ed36",
         "items_121.rs": "af1c0f10b55cd2fc84a109a1047572926f2c1c7f9285c7a35dfa085b346f348e",
         "items_1214.rs": "9fa014c2245441b300dc244caff518e706642a6999efef486e414da596552d93",
         "legacy_bed_bounce.rs": "4f8510de184b277b30e3b625657c5e7f5c914304ebc63e45814387e3c3949c5a",
-        "legacy_block_predictions.rs": "1cd685f94fca8b2df77d1fd40609e2983202fa7a262e09a7925d50dfd1c2bab4",
+        "legacy_block_predictions.rs": "26719d268607e3ac11a3cc2a0a56d2bae572771b591e9d6997bcc9a98be14884",
         "legacy_boat_ride.rs": "238a3c3b4db5f946acc7e505a15e371a0787c774c35c9a114c5fcc2dd8c5fe9d",
         "legacy_menu_slots.rs": "616f2b5847f3685b3bc5f7adedc4c34041dba03fe78dc553f0f12a8676eaa709",
         "legacy_mesh_boundary.rs": "dbacd906eb57e0cbcf22dd1baaf3882e72a84637808e0694cfb4f83d1fba2b73",
         "legacy_mesh_region.rs": "2dd6282f3c19ff546a41e08324cf27e0ee85457bb22bea1e3535af6ce7f6ebf5",
         "legacy_nbt.rs": "c7ee4c535c97c909ce8333369ec101e50968d96cad3a06e6eb1ba22593dc9273",
-        "legacy_server_block.rs": "452d2671434db047e48a8c94656493fadc6beb404ee252156e2e2f0242aa4f80",
+        "legacy_server_block.rs": "4ce3121826a26506c22674462dbc0718710ce48d1c96181d004162fd34d6ebb8",
         "legacy_skins.rs": "e8a7bb0273f5c92e0591b8c7d539d6ec3b2c922b7b0c886551b3afcf526949d6",
         "legacy_sword_animation.rs": "d5fb9647492518823ba72e5a1e664b86dcce083a237e2da8eb59bebd4ae6338b",
         "legacy_sword_duration.rs": "5f19190069438749a4541cff3144fcc6ee8865b869603e159c964fbfe617805b",
@@ -215,10 +218,12 @@
         "values.rs": "aa77b8a28a1744c06f0f04fca841cdc7cda6a27fff9195131203e6c81a58da65",
         "wire.rs": "b6ca915e4b25f3e0d40b99d46484fb5df5faa85300e0b0f6fb25c688957f00cc",
         "world.rs": "1c02bf79b6fa2986fb6d69fb1ee0f823d93e61496d74797bfb266152b8852d6d",
-        "world_1214.rs": "fbd35b2785371ed96ea1f4270e5db17e03a1b6ec6afa3b2f4c5cc7d182ef1624"
+        "world_1214.rs": "fbd35b2785371ed96ea1f4270e5db17e03a1b6ec6afa3b2f4c5cc7d182ef1624",
+        "block_predictions.rs": "37d4191b2e044c8326db22671b78875c0b5339dd2697b418225d52350346b1b4"
       },
       "starling_changes": [
-        "legacy_boat_ride.rs: match remote_ride bool return in Starling 0.8.0; preserve legacy boat handling"
+        "legacy_boat_ride.rs: match remote_ride bool return in Starling 0.8.0; preserve legacy boat handling",
+        "Use a same-module AST bridge for Starling BlockPredictions, preserving per-block removal, sequence filtering and teleport history"
       ]
     },
     "toggle_sprint": {
