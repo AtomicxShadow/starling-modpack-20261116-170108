@@ -122,7 +122,7 @@
         "items_1214.rs": "9fa014c2245441b300dc244caff518e706642a6999efef486e414da596552d93",
         "legacy_bed_bounce.rs": "4f8510de184b277b30e3b625657c5e7f5c914304ebc63e45814387e3c3949c5a",
         "legacy_block_predictions.rs": "1cd685f94fca8b2df77d1fd40609e2983202fa7a262e09a7925d50dfd1c2bab4",
-        "legacy_boat_ride.rs": "0f6da3cfe8c6c8d3f53ed54d57c2c786d00cd5d105aef745c866ce1407936a00",
+        "legacy_boat_ride.rs": "238a3c3b4db5f946acc7e505a15e371a0787c774c35c9a114c5fcc2dd8c5fe9d",
         "legacy_menu_slots.rs": "616f2b5847f3685b3bc5f7adedc4c34041dba03fe78dc553f0f12a8676eaa709",
         "legacy_mesh_boundary.rs": "dbacd906eb57e0cbcf22dd1baaf3882e72a84637808e0694cfb4f83d1fba2b73",
         "legacy_mesh_region.rs": "2dd6282f3c19ff546a41e08324cf27e0ee85457bb22bea1e3535af6ce7f6ebf5",
@@ -216,7 +216,10 @@
         "wire.rs": "b6ca915e4b25f3e0d40b99d46484fb5df5faa85300e0b0f6fb25c688957f00cc",
         "world.rs": "1c02bf79b6fa2986fb6d69fb1ee0f823d93e61496d74797bfb266152b8852d6d",
         "world_1214.rs": "fbd35b2785371ed96ea1f4270e5db17e03a1b6ec6afa3b2f4c5cc7d182ef1624"
-      }
+      },
+      "starling_changes": [
+        "legacy_boat_ride.rs: match remote_ride bool return in Starling 0.8.0; preserve legacy boat handling"
+      ]
     },
     "toggle_sprint": {
       "source": "https://github.com/CayMac97/toggle-sprint/releases/tag/v1.0.0",

@@ -18,7 +18,9 @@ Starling kaynağı 0.8.0 etiketinin tam commit'ine sabittir:
 `ac874422ed8f892505ff73d67ae486ecfee7a516`.
 Horizonmatica, kullanıcının `horizonmatica-phone-build.zip` paketinden alındı;
 `play_mouse` ve `pauses_game` hedefleri için önceki değişiklikler korundu.
-Diğer modların Rust kodu değiştirilmedi. Starling'in kendi adaptörü ve
+ViaHorizon'un `legacy_boat_ride` yardımcısı Starling 0.8.0'daki `bool` dönüş
+türüne uyarlandı (`Result<bool>` kaldırıldı). Diğer modların Rust kodu
+değiştirilmedi. Starling'in kendi adaptörü ve
 horizon-mixins aracı derleme sırasında çalışır. Bunlar tüm API farklarını
 çözme garantisi vermez; ilk gerçek derlemede ek uyarlama gerekebilir.
 
