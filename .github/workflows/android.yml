@@ -1,0 +1,75 @@
+name: Build mods for Starling 0.8.0
+
+on:
+  workflow_dispatch:
+    inputs:
+      mods:
+        description: 'all veya virgülle ayrılan mod kimlikleri'
+        default: all
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  android:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    env:
+      CARGO_BUILD_JOBS: '2'
+      NATIVE_CACHE: ${{ github.workspace }}/native-cache
+      SELECTED_MODS: ${{ inputs.mods }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: modpack
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: starling-client/starling
+          ref: ac874422ed8f892505ff73d67ae486ecfee7a516
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate selected bundles
+        run: python3 modpack/tools/check.py --source source --mods "$SELECTED_MODS"
+      - name: Free disk space on the disposable runner
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/swift /opt/hostedtoolcache/CodeQL
+          df -h "$GITHUB_WORKSPACE" /mnt
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Install Android tools
+        run: |
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install \
+            'build-tools;35.0.0' 'platforms;android-36' 'ndk;28.2.13676358'
+      - name: Install Rust and cargo-ndk
+        run: |
+          rustup toolchain install stable --profile minimal --target aarch64-linux-android
+          rustup default stable
+          cargo install cargo-ndk --version 3.5.4 --locked
+      - name: Add swap
+        run: |
+          sudo fallocate -l 4G /mnt/starling-modpack.swap
+          sudo chmod 600 /mnt/starling-modpack.swap
+          sudo mkswap /mnt/starling-modpack.swap
+          sudo swapon /mnt/starling-modpack.swap
+      - name: Build selected mods together
+        run: bash modpack/build.sh source out "$SELECTED_MODS"
+      - name: Upload results and log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: starling-080-modpack-arm64
+          path: |
+            out/*.apk
+            out/*.so
+            out/*.json
+            out/build.log
+          if-no-files-found: warn
+          retention-days: 7
